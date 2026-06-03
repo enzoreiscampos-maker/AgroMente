@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgroMente — Campo & Inovação</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========================
+       CABEÇALHO
+  ========================= -->
+  <header class="header">
+    <div class="header__bg-texture"></div>
+    <div class="header__content">
+      <div class="header__badge">🌱 Educação Rural</div>
+      <h1 class="header__title">AgroMente</h1>
+      <p class="header__subtitle">Aprendendo sobre o campo e a inovação de forma interativa</p>
+      <a href="#quiz" class="header__cta">Fazer o Quiz <span class="arrow">↓</span></a>
+    </div>
+    <!-- Decorações orgânicas -->
+    <div class="header__leaf header__leaf--1">🌿</div>
+    <div class="header__leaf header__leaf--2">🌾</div>
+    <div class="header__leaf header__leaf--3">🍃</div>
+  </header>
+
+  <!-- ========================
+       SEÇÃO DE APRESENTAÇÃO
+  ========================= -->
+  <section class="presentation">
+    <div class="container">
+      <div class="presentation__grid">
+
+        <div class="presentation__text">
+          <span class="section-tag">Por que isso importa?</span>
+          <h2 class="presentation__title">Campo, Tecnologia e Futuro</h2>
+          <p>
+            A agricultura é a base da alimentação humana e um dos setores que mais se transforma 
+            com a inovação tecnológica. Da semente ao prato, cada etapa envolve conhecimento, 
+            cuidado e responsabilidade com o meio ambiente.
+          </p>
+          <p>
+            Entender a relação entre <strong>sustentabilidade</strong>, <strong>tecnologia</strong> 
+            e o <strong>meio rural</strong> é essencial para construir um futuro mais equilibrado 
+            para pessoas e para o planeta.
+          </p>
+        </div>
+
+        <div class="presentation__cards">
+          <!-- Card 1 -->
+          <div class="info-card info-card--green">
+            <div class="info-card__icon">🌱</div>
+            <h3>Agricultura</h3>
+            <p>Responsável por alimentar bilhões de pessoas, a agricultura é a base da civilização humana.</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="info-card info-card--blue">
+            <div class="info-card__icon">🛸</div>
+            <h3>Tecnologia</h3>
+            <p>Drones, sensores e inteligência artificial estão revolucionando o campo com precisão e eficiência.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="info-card info-card--earth">
+            <div class="info-card__icon">♻️</div>
+            <h3>Sustentabilidade</h3>
+            <p>Usar os recursos naturais de forma inteligente garante que as próximas gerações também possam prosperar.</p>
+          </div>
+          <!-- Card 4 -->
+          <div class="info-card info-card--yellow">
+            <div class="info-card__icon">💧</div>
+            <h3>Recursos Naturais</h3>
+            <p>Água, solo e biodiversidade são tesouros que precisam ser preservados com urgência.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       STATS / NÚMEROS
+  ========================= -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stat-item">
+          <span class="stat-item__number">800M+</span>
+          <span class="stat-item__label">pessoas em insegurança alimentar</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item__number">70%</span>
+          <span class="stat-item__label">da água doce usada na agricultura</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item__number">50%</span>
+          <span class="stat-item__label">de aumento na demanda por alimentos até 2050</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item__number">3x</span>
+          <span class="stat-item__label">mais eficiência com agricultura de precisão</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       QUIZ
+  ========================= -->
+  <section class="quiz-section" id="quiz">
+    <div class="container">
+      <div class="quiz-header">
+        <span class="section-tag">Teste seus conhecimentos</span>
+        <h2 class="quiz-header__title">Quiz AgroMente</h2>
+        <p class="quiz-header__desc">10 perguntas sobre agricultura, sustentabilidade e tecnologia no campo.</p>
+      </div>
+
+      <!-- Caixa do Quiz -->
+      <div class="quiz-box" id="quizBox">
+
+        <!-- Tela inicial -->
+        <div class="quiz-screen quiz-screen--start" id="screenStart">
+          <div class="quiz-start__icon">🌾</div>
+          <h3>Pronto para aprender?</h3>
+          <p>Responda 10 questões e descubra o quanto você sabe sobre o campo e a inovação.</p>
+          <button class="btn btn--primary" id="btnStart">Começar Quiz</button>
+        </div>
+
+        <!-- Tela da questão -->
+        <div class="quiz-screen quiz-screen--question hidden" id="screenQuestion">
+          <!-- Progresso -->
+          <div class="quiz-progress">
+            <div class="quiz-progress__bar">
+              <div class="quiz-progress__fill" id="progressFill"></div>
+            </div>
+            <span class="quiz-progress__label" id="progressLabel">Questão 1 de 10</span>
+          </div>
+
+          <!-- Pontuação corrente -->
+          <div class="quiz-score-live">
+            <span>⭐ Acertos: <strong id="liveScore">0</strong></span>
+          </div>
+
+          <!-- Enunciado -->
+          <div class="quiz-question" id="questionText"></div>
+
+          <!-- Alternativas -->
+          <div class="quiz-options" id="optionsContainer"></div>
+
+          <!-- Feedback -->
+          <div class="quiz-feedback hidden" id="feedbackBox"></div>
+
+          <!-- Botão próxima -->
+          <button class="btn btn--next hidden" id="btnNext">Próxima →</button>
+        </div>
+
+        <!-- Tela de resultado -->
+        <div class="quiz-screen quiz-screen--result hidden" id="screenResult">
+          <div class="result-emoji" id="resultEmoji"></div>
+          <h3 class="result-title" id="resultTitle"></h3>
+          <p class="result-message" id="resultMessage"></p>
+
+          <div class="result-score-box">
+            <div class="result-score-box__item">
+              <span class="result-score-box__number" id="resultAcertos">0</span>
+              <span class="result-score-box__label">Acertos</span>
+            </div>
+            <div class="result-score-box__divider"></div>
+            <div class="result-score-box__item">
+              <span class="result-score-box__number" id="resultPercent">0%</span>
+              <span class="result-score-box__label">Desempenho</span>
+            </div>
+          </div>
+
+          <!-- Barra de desempenho visual -->
+          <div class="result-bar-wrapper">
+            <div class="result-bar" id="resultBar"></div>
+          </div>
+
+          <button class="btn btn--primary" id="btnRestart">🔄 Jogar Novamente</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       RODAPÉ
+  ========================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <span class="footer__logo">AgroMente 🌱</span>
+          <p>Educação rural, tecnologia e sustentabilidade para todos.</p>
+        </div>
+        <div class="footer__tags">
+          <span class="tag">🌾 Agricultura</span>
+          <span class="tag">🌿 Sustentabilidade</span>
+          <span class="tag">🛸 Tecnologia</span>
+          <span class="tag">💧 Recursos Naturais</span>
+          <span class="tag">☀️ Energia Renovável</span>
+        </div>
+      </div>
+      <p class="footer__copy">© 2026 AgroMente — Conteúdo educacional interativo</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
